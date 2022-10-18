@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/post/{blog_post_id}', [\App\Http\Controllers\BlogpostController::class, 'show'])->name('post');
+Route::get('/post/delete/{blog_post_id}', [\App\Http\Controllers\BlogpostController::class, 'deletePost'])->name('delete_post');
+Route::get('/post/update/{blog_post_id}', [\App\Http\Controllers\BlogpostController::class, 'updatePost'])->name('update_post');
+Route::post('/post/update', [\App\Http\Controllers\BlogpostController::class, 'update'])->name('post_update');
