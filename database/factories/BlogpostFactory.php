@@ -17,7 +17,11 @@ class BlogpostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => fake()->word,
+            'content' => fake()->text,
+            'image_url' => fake()->imageUrl,
+            'category_id' => fake()->numberBetween(1, 10),
+            'user_id' => fake()->numberBetween(1, 10)
         ];
     }
 }
