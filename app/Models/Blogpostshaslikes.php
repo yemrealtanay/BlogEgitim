@@ -16,4 +16,14 @@ class Blogpostshaslikes extends Model
         'blog_post_id',
         'user_id'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'user_id', 'user_id');
+    }
+
+    public function blogPosts()
+    {
+        return $this->hasMany(Blogpost::class, 'blog_post_id', 'blog_post_id');
+    }
 }
